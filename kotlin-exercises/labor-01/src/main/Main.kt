@@ -84,5 +84,5 @@ fun main(args: Array<String>) {
 //    println(capitolizeDays(listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")));
 //    println(capitolizeFirstLetterInDays(listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")))
 //    println(lengthOfDays(listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")))
-//    println(avarageLenghtOfDays(listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")))
+    println(avarageLenghtOfDays(listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")))
 }
