@@ -1,6 +1,7 @@
 package main
 
 import java.util.*
+import kotlin.random.Random
 
 fun printSumOfNumbers(number1:Int, number2:Int) {
     println("$number1 + $number2 = ${number1 + number2}");
@@ -71,6 +72,7 @@ fun lengthOfDays(list:List<String>):List<Int> = list.map { it.length }
 
 fun avarageLenghtOfDays(list:List<String>):Double = list.map { it.length }.average()
 
+
 fun main(args: Array<String>) {
     //printSumOfNumbers(10,15);
     //imutableLists();
@@ -84,5 +86,33 @@ fun main(args: Array<String>) {
 //    println(capitolizeDays(listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")));
 //    println(capitolizeFirstLetterInDays(listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")))
 //    println(lengthOfDays(listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")))
-    println(avarageLenghtOfDays(listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")))
+//    println(avarageLenghtOfDays(listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")))
+//    val days = listOf("monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday")
+//    val mutableDays = days.toMutableList()
+//    mutableDays.removeIf { it.contains('n') }
+//    println(mutableDays);
+//    mutableDays.withIndex().forEach { println("Item at ${it.index} is: ${it.value}") }
+//    mutableDays.sort()
+//    println(mutableDays)
+    var randomNumbers = MutableList(10) { Random.nextInt(0, 100) }
+    println(randomNumbers)
+    randomNumbers.sort()
+    println(randomNumbers)
+    if (randomNumbers.any { it % 2 == 0 }){
+        println("There are even numbers")
+    }
+    else{
+        println("There are no even numbers")
+    }
+    if (randomNumbers.all { it %2 == 0 }){
+        println("All numbers are even")
+    }
+    else{
+        println("Not all numbers are even")
+    }
+    var sum:Int = 0;
+    randomNumbers.forEach(){
+        sum+=it
+    }
+    println(sum/randomNumbers.size)
 }
