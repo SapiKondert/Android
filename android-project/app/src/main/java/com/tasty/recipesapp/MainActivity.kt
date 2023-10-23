@@ -2,10 +2,12 @@ package com.tasty.recipesapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.tasty.recipesapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binder = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binder.root);
     }
 }
