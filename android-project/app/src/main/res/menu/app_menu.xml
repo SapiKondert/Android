@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <item
+                android:id="@+id/homeFragment"
+                android:title="@string/home_screen_title"
+                android:icon="@drawable/home"
+                app:showAsAction="always"/>
+        <item
+                android:id="@+id/recipesFragment"
+                android:title="@string/recipes_screen_title"
+                android:icon="@drawable/recipes"
+                app:showAsAction="always"/>
+        <item
+                android:id="@+id/profileFragment"
+                android:title="@string/profile_screen_title"
+                android:icon="@drawable/profileuser"
+                app:showAsAction="always"/>
+    </group>
+</menu>
