@@ -10,37 +10,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1f06b00-6190-4e5d-ae6c-c489d666447d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/instruction_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/instruction_all.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/InstructionDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/home/HomeFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/profile/ProfileFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/recipe/RecipeDetailFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/recipe/RecipeListViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/recipe/RecipesFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_detail.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recipes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/app_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/full.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/ComponentDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/CreditDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/IngredientDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/MeasurementDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/NutritionDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/RecipeDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/SectionDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/TagDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/TopicDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/UnitDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/UserRatingDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/ComponentModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/CreditModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/IngredientModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/InstructionModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/MeasurementModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/NutritionModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/RecipeModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/SectionModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/TagModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/TopicModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/UnitModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/UserRatingModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/misc/Mapping.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/provider/RepositoryProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/repository/IGenericRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/repository/RecipeRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/activities/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/activities/SplashActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/InstructionDTO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/InstructionDTO.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/recipe/RecipeListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/recipe/RecipeListViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/recipe/RecipesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/recipe/RecipesFragment.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\matya\.android\avd\Pixel_7_Pro_API_30.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -52,8 +60,10 @@
         <option value="valueResourceFile" />
         <option value="navigationResourceFile" />
         <option value="resourceFile" />
-        <option value="Kotlin Data Class" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Data Class" />
       </list>
     </option>
   </component>
@@ -145,6 +155,43 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="RecipesApp.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -161,7 +208,14 @@
       <workItem from="1698648242375" duration="1097000" />
       <workItem from="1698913013916" duration="4932000" />
       <workItem from="1698917973438" duration="338000" />
-      <workItem from="1699107125343" duration="65000" />
+      <workItem from="1699107125343" duration="736000" />
+      <workItem from="1699182512392" duration="812000" />
+      <workItem from="1699183494951" duration="1000" />
+      <workItem from="1699510061288" duration="6212000" />
+      <workItem from="1699855587526" duration="5992000" />
+      <workItem from="1699864583340" duration="625000" />
+      <workItem from="1699873636333" duration="8308000" />
+      <workItem from="1700122061322" duration="75000" />
     </task>
     <servers />
   </component>

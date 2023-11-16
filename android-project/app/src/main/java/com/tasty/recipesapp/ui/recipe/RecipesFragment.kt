@@ -1,11 +1,12 @@
 package com.tasty.recipesapp.ui.recipe
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import com.tasty.recipesapp.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -18,16 +19,25 @@ private const val ARG_PARAM2 = "param2"
  * Use the [RecipesFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
+// Milestone
 class RecipesFragment : Fragment() {
+
+    private val recipeViewModel : RecipeListViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val viewModel = ViewModelProvider(this)[RecipeListViewModel::class.java]
+        recipeViewModel.loadData(requireContext())
+        recipeViewModel.recipeModel.observe(viewLifecycleOwner) {  recipes ->
+            for (recipesModel in recipes) {
+                Log.d("Output", recipesModel.toString())
+            }
+        }
 
-        viewModel.readInstructionsFromFile(requireContext());
     }
 
     override fun onCreateView(
