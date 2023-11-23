@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binder = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binder.root);
-
         navigationInit(binder)
+
     }
 
     private fun navigationInit(binder: ActivityMainBinding) {

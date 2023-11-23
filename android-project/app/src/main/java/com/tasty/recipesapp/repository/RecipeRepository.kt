@@ -36,10 +36,6 @@ class RecipeRepository : IGenericRepository<RecipeModel> {
             //val instructionList = gson.fromJson<List<InstructionDTO>>(jsonString, type)
             // if with label
             recipeList = gson.fromJson(recipeArray.toString(), type)
-
-            for (recipe in recipeList) {
-                Log.i("GSON", (recipe.userRating==null).toString())
-            }
             //instructions.value = instructionList
         } catch (e: IOException) {
             e.printStackTrace()

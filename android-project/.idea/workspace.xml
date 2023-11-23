@@ -10,45 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1f06b00-6190-4e5d-ae6c-c489d666447d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/assets/full.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/ComponentDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/CreditDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/IngredientDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/MeasurementDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/NutritionDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/RecipeDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/SectionDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/TagDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/TopicDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/UnitDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/UserRatingDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/ComponentModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/CreditModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/IngredientModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/InstructionModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/MeasurementModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/NutritionModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/RecipeModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/SectionModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/TagModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/TopicModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/UnitModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/models/UserRatingModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/misc/Mapping.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/provider/RepositoryProvider.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/repository/IGenericRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/repository/RecipeRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/adapter/RecipesAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recipe_row_item.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/InstructionDTO.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/data/dtos/InstructionDTO.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/recipe/RecipeListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/recipe/RecipeListViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/activities/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/activities/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/repository/RecipeRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/repository/RecipeRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/recipe/RecipesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tasty/recipesapp/ui/recipe/RecipesFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recipes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_recipes.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\matya\.android\avd\Pixel_7_Pro_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[9c30b380]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -57,13 +32,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="valueResourceFile" />
         <option value="navigationResourceFile" />
         <option value="resourceFile" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Object" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Data Class" />
+        <option value="Kotlin Class" />
+        <option value="valueResourceFile" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -110,6 +86,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.tasty.recipesapp.adapter" />
       <recent name="com.tasty.recipesapp.ui.recipe" />
       <recent name="com.tasty.recipesapp.activities" />
     </key>
@@ -215,7 +192,10 @@
       <workItem from="1699855587526" duration="5992000" />
       <workItem from="1699864583340" duration="625000" />
       <workItem from="1699873636333" duration="8308000" />
-      <workItem from="1700122061322" duration="75000" />
+      <workItem from="1700122061322" duration="2722000" />
+      <workItem from="1700124810710" duration="3045000" />
+      <workItem from="1700565011098" duration="5311000" />
+      <workItem from="1700727036594" duration="1280000" />
     </task>
     <servers />
   </component>
