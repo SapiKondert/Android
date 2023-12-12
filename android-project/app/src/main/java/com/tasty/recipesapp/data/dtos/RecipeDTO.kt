@@ -7,6 +7,8 @@ data class RecipeDTO(
     val id: Int,
     @SerializedName("name")
     val name: String,
+    @SerializedName("thumbnail_url")
+    val thumbnailURL: String,
     @SerializedName("instructions")
     val instructions: List<InstructionDTO>,
     @SerializedName("nutrition")

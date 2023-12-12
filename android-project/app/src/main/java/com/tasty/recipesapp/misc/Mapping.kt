@@ -29,6 +29,7 @@ object Mapping {
         return RecipeModel(
             id = this.id,
             name = this.name,
+            thumbnailURL = this.thumbnailURL,
             instructions = this.instructions.map{ it.toInstructionModel() },
             nutrition = this.nutrition.toNutritionModel(),
             credits = this.credits.map { it.toCreditModel() },
@@ -37,6 +38,23 @@ object Mapping {
             topic = this.topics.map { it.toTopicModel() },
             userRating = this.userRating.toUserRatingModel()
 
+        )
+    }
+
+    fun NewRecipeDTO.toModel():NewRecipeModel{
+        Log.i("Mapping", "Id: ${this.id}")
+        Log.i("Mapping", "Title: ${this.title}")
+        Log.i("Mapping", "Picture URL: ${this.pictureURL}")
+        Log.i("Mapping", "Description: ${this.description}")
+        Log.i("Mapping", "Ingredients: ${this.ingredients}")
+        Log.i("Mapping", "Instructions: ${this.instructions}")
+        return NewRecipeModel(
+            id = this.id,
+            title = this.title,
+            description = this.description,
+            pictureURL = this.pictureURL,
+            ingredients = this.ingredients,
+            instructions = this.instructions
         )
     }
 

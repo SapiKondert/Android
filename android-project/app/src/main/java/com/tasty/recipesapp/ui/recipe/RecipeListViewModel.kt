@@ -25,4 +25,5 @@ class RecipeListViewModel : ViewModel() {
         val data = RepositoryProvider.recipeRepository.getAll(context)
         _recipeModels.value = data
     }
+
 }

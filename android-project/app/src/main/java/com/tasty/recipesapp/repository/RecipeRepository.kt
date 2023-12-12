@@ -4,19 +4,43 @@ import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.tasty.recipesapp.data.daos.RecipeDao
+import com.tasty.recipesapp.data.dtos.NewRecipeDTO
 import com.tasty.recipesapp.data.dtos.RecipeDTO
+import com.tasty.recipesapp.data.entities.RecipeEntity
+import com.tasty.recipesapp.data.models.NewRecipeModel
 import com.tasty.recipesapp.data.models.RecipeModel
+import com.tasty.recipesapp.utils.Mapping.toModel
+import com.tasty.recipesapp.utils.Mapping.toRecipeModel
 import com.tasty.recipesapp.utils.Mapping.toRecipeModelList
 import org.json.JSONObject
 import java.io.IOException
 
-class RecipeRepository : IGenericRepository<RecipeModel> {
+class RecipeRepository(private val recipeDao: RecipeDao) : IGenericRepository<RecipeModel> {
+
+    private val gson = Gson()
+
+    suspend fun insertRecipe(recipe: RecipeEntity) {
+        recipeDao.insertRecipe(recipe)
+    }
+    suspend fun getAllRecipes(): List<NewRecipeModel> {
+        return recipeDao.getAllRecipes().map {
+            val jsonObject = JSONObject(it.json)
+            jsonObject.apply { put("id", it.internalId) }
+            Log.i("RecipeRepository", jsonObject.toString())
+            gson.fromJson(jsonObject.toString(), NewRecipeDTO::class.java).toModel()
+        }
+    }
+
+    suspend fun deleteRecipe(recipe: RecipeEntity) {
+        recipeDao.deleteRecipe(recipe)
+    }
+
     override fun getAll(context: Context): List<RecipeModel> {
         return readAll(context).toRecipeModelList()
     }
 
     fun readAll(context: Context): List<RecipeDTO> {
-        val gson = Gson()
         var recipeList = listOf<RecipeDTO>()
         val assetManager = context.assets
         try {

@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import com.tasty.recipesapp.R
 import com.tasty.recipesapp.databinding.ActivityMainBinding
+import com.tasty.recipesapp.providers.RepositoryProvider
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         val binder = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binder.root);
         navigationInit(binder)
-
+        RepositoryProvider.initialize(context = applicationContext)
     }
 
     private fun navigationInit(binder: ActivityMainBinding) {

@@ -6,30 +6,35 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.tasty.recipesapp.R
+import com.tasty.recipesapp.data.entities.RecipeEntity
 import com.tasty.recipesapp.data.models.NewRecipeModel
 import com.tasty.recipesapp.data.models.RecipeModel
+import com.tasty.recipesapp.ui.profile.ProfileViewModel
 
-class RecipesAdapter(val viewClicked: (RecipeModel) -> Unit): RecyclerView.Adapter<RecipesAdapter.ViewHolder>() {
-
-    private val dataSet = mutableListOf<RecipeModel>()
-    private val newDataSet = mutableListOf<NewRecipeModel>()
+class NewRecipesAdapter(val deleteClick: (RecipeEntity) -> Unit,val viewClicked: (NewRecipeModel) -> Unit): RecyclerView.Adapter<NewRecipesAdapter.ViewHolder>() {
+    private val gson = Gson()
+    private val dataSet = mutableListOf<NewRecipeModel>()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
+        val deleteButton: Button
         val viewButton: Button
 
         init {
             // Define click listener for the ViewHolder's View
             textView = view.findViewById(R.id.row_element_text_view)
-            viewButton = view.findViewById(R.id.button)
+            deleteButton = view.findViewById(R.id.delete_button)
+            viewButton = view.findViewById(R.id.view_button)
         }
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.recipe_row_item, viewGroup, false)
+            .inflate(R.layout.private_recipe_row_item, viewGroup, false)
 
         return ViewHolder(view)
     }
@@ -38,21 +43,24 @@ class RecipesAdapter(val viewClicked: (RecipeModel) -> Unit): RecyclerView.Adapt
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         //Log.i("RecipesAdapter", dataSet.size.toString())
-        viewHolder.textView.text = dataSet[position].name
+        viewHolder.textView.text = dataSet[position].title
+        viewHolder.deleteButton.setOnClickListener {
+            val recipeEntity = RecipeEntity(
+                internalId = dataSet[position].id,
+                json = gson.toJson(dataSet[position])
+            )
+            deleteClick(recipeEntity)
+            dataSet.removeAt(position)
+            notifyDataSetChanged()
+        }
         viewHolder.viewButton.setOnClickListener {
             viewClicked(dataSet[position])
         }
     }
 
-    public fun updateData(data: List<RecipeModel>) {
+    public fun updateData(data: List<NewRecipeModel>) {
         dataSet.clear()
         dataSet.addAll(data)
-        notifyDataSetChanged()
-    }
-
-    public fun updateNewRecipeData(data:List<NewRecipeModel>){
-        dataSet.clear()
-        newDataSet.addAll(data)
         notifyDataSetChanged()
     }
 

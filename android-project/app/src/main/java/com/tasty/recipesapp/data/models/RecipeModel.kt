@@ -3,6 +3,7 @@ package com.tasty.recipesapp.data.models
 data class RecipeModel(
     val id:Int,
     val name:String,
+    val thumbnailURL:String,
     val instructions:List<InstructionModel>,
     val nutrition: NutritionModel,
     val credits:List<CreditModel>,
