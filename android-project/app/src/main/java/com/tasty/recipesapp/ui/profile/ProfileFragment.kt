@@ -41,7 +41,7 @@ class ProfileFragment : Fragment() {
         profileViewModel.removeRecipe(recipe)
     }
 
-    fun viewClicked(data:NewRecipeModel){
+    fun viewClicked(data:Long){
         val navHostFragment = NavHostFragment.findNavController(this)
         val bundle = bundleOf("data" to data)
         navHostFragment.navigate(R.id.action_profileFragment_to_privateRecipeDetailFragmant,bundle)

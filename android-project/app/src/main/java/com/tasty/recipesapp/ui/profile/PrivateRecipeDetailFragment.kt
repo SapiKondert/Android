@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import com.tasty.recipesapp.R
@@ -28,27 +30,32 @@ class PrivateRecipeDetailFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var data: NewRecipeModel? = null
+    private var id: Long? = null
 
     private lateinit var binder: FragmentPrivateRecipeDetailFragmantBinding
-
+    private val privateRecipeViewModel : PrivateRecipeViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        data = arguments?.getParcelable<NewRecipeModel>("data")
+        id = arguments?.getLong("data")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binder.privateRecipeTitle.text = data?.title
-        binder.descriptionTextView.text = data?.description
-        val imageView  = binder.imageView
-        val imageURL = data?.pictureURL
-        Log.i("Image URL", "$imageURL")
-        Glide.with(this)
-            .load(imageURL)
-            .centerCrop()
-            .placeholder(R.drawable.ic_launcher_foreground)
-            .fallback(R.drawable.ic_launcher_foreground)
-            .into(imageView)
+        privateRecipeViewModel.getById(id!!)
+        privateRecipeViewModel.recipe.observe(viewLifecycleOwner) {  recipe ->
+            data = recipe
+            binder.privateRecipeTitle.text = data?.title
+            binder.descriptionTextView.text = data?.description
+            val imageView  = binder.imageView
+            val imageURL = data?.pictureURL
+            Log.i("Image URL", "$imageURL")
+            Glide.with(this)
+                .load(imageURL)
+                .centerCrop()
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .fallback(R.drawable.ic_launcher_foreground)
+                .into(imageView)
+        }
     }
 
     override fun onCreateView(

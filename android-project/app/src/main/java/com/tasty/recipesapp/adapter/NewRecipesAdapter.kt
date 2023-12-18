@@ -15,7 +15,7 @@ import com.tasty.recipesapp.data.models.NewRecipeModel
 import com.tasty.recipesapp.data.models.RecipeModel
 import com.tasty.recipesapp.ui.profile.ProfileViewModel
 
-class NewRecipesAdapter(val deleteClick: (RecipeEntity) -> Unit,val viewClicked: (NewRecipeModel) -> Unit): RecyclerView.Adapter<NewRecipesAdapter.ViewHolder>() {
+class NewRecipesAdapter(val deleteClick: (RecipeEntity) -> Unit,val viewClicked: (Long) -> Unit): RecyclerView.Adapter<NewRecipesAdapter.ViewHolder>() {
     private val gson = Gson()
     private val dataSet = mutableListOf<NewRecipeModel>()
 
@@ -54,7 +54,7 @@ class NewRecipesAdapter(val deleteClick: (RecipeEntity) -> Unit,val viewClicked:
             notifyDataSetChanged()
         }
         viewHolder.viewButton.setOnClickListener {
-            viewClicked(dataSet[position])
+            viewClicked(dataSet[position].id)
         }
     }
 
