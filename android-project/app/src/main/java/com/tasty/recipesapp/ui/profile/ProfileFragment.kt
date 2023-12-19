@@ -80,6 +80,7 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        recipesAdapter.context = requireContext()
         binder = FragmentProfileBinding.inflate(inflater, container, false)
         return binder.root
     }

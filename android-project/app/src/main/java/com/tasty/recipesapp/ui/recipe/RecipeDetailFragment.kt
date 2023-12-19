@@ -27,10 +27,12 @@ class RecipeDetailFragment : Fragment() {
     private lateinit var binder: FragmentRecipeDetailBinding
     private var title: String? = null
     private var picture: String? = null
+    private var description: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         title = arguments?.getString("Title")
         picture = arguments?.getString("Picture")
+        description = arguments?.getString("Description")
         Log.i("Picture", "$picture")
     }
 
@@ -46,6 +48,7 @@ class RecipeDetailFragment : Fragment() {
             .placeholder(R.drawable.ic_launcher_foreground)
             .fallback(R.drawable.ic_launcher_foreground)
             .into(imageView)
+        binder.description.text = description
     }
 
     override fun onCreateView(

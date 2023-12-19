@@ -22,5 +22,7 @@ data class RecipeDTO(
     @SerializedName("topics")
     val topics: List<TopicDTO>,
     @SerializedName("user_ratings")
-    val userRating: UserRatingDTO
+    val userRating: UserRatingDTO,
+    @SerializedName("description")
+    val description: String
 )

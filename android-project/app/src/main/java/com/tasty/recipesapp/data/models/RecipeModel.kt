@@ -10,5 +10,6 @@ data class RecipeModel(
     val sections:List<SectionModel>,
     val tags:List<TagModel>,
     val topic:List<TopicModel>,
-    val userRating:UserRatingModel
+    val userRating:UserRatingModel,
+    val description:String
 )

@@ -46,7 +46,7 @@ class RecipesFragment : Fragment() {
     fun viewClicked(data:RecipeModel){
         val navHostFragment = NavHostFragment.findNavController(this)
         Log.i("RecipesFragment2", data.name)
-        val bundle = bundleOf("Title" to data.name, "Picture" to data.thumbnailURL)
+        val bundle = bundleOf("Title" to data.name, "Picture" to data.thumbnailURL, "Description" to data.description)
         navHostFragment.navigate(R.id.action_recipesFragment_to_recipeDetailFragment,bundle)
     }
 
@@ -136,6 +136,7 @@ class RecipesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        recipesAdapter.context = requireContext()
         binder = FragmentRecipesBinding.inflate(inflater, container, false)
         return binder.root
     }

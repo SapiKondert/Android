@@ -36,7 +36,8 @@ object Mapping {
             sections = this.sections.map { it.toSectionModel() },
             tags = this.tags.map { it.toTagModel() },
             topic = this.topics.map { it.toTopicModel() },
-            userRating = this.userRating.toUserRatingModel()
+            userRating = this.userRating.toUserRatingModel(),
+            description = this.description
 
         )
     }

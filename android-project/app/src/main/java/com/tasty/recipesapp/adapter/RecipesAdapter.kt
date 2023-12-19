@@ -1,12 +1,15 @@
 package com.tasty.recipesapp.adapter
 
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.tasty.recipesapp.R
 import com.tasty.recipesapp.data.entities.FavoritesEntity
 import com.tasty.recipesapp.data.models.NewRecipeModel
@@ -16,7 +19,7 @@ class RecipesAdapter(val viewClicked: (RecipeModel) -> Unit,
                      val favoriteClicked: (RecipeModel) -> Unit,
                      val getAllFavorites: () -> MutableList<FavoritesEntity>)
     : RecyclerView.Adapter<RecipesAdapter.ViewHolder>() {
-
+    public var context: Context? = null
     private val dataSet = mutableListOf<RecipeModel>()
     private val newDataSet = mutableListOf<NewRecipeModel>()
     private var allFavorites = mutableListOf<FavoritesEntity>()
@@ -24,12 +27,14 @@ class RecipesAdapter(val viewClicked: (RecipeModel) -> Unit,
         val textView: TextView
         val viewButton: Button
         val favoteButton: Button
+        val bgImage: ImageView
 
         init {
             // Define click listener for the ViewHolder's View
             textView = view.findViewById(R.id.row_element_text_view)
             viewButton = view.findViewById(R.id.button)
             favoteButton = view.findViewById(R.id.favoriteButton)
+            bgImage = view.findViewById(R.id.bgImage)
         }
     }
 
@@ -55,6 +60,14 @@ class RecipesAdapter(val viewClicked: (RecipeModel) -> Unit,
         //Log.i("RecipesAdapter", dataSet.size.toString())
         refreshItem(viewHolder,position)
         viewHolder.textView.text = dataSet[position].name
+        context?.let {
+            Glide.with(it)
+                .load(dataSet[position].thumbnailURL)
+                .fitCenter()
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .fallback(R.drawable.ic_launcher_foreground)
+                .into(viewHolder.bgImage)
+        }
         viewHolder.viewButton.setOnClickListener {
             viewClicked(dataSet[position])
         }
