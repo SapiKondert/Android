@@ -8,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import com.tasty.recipesapp.R
+import com.tasty.recipesapp.adapter.SimpleListAdapter
 import com.tasty.recipesapp.data.models.NewRecipeModel
 import com.tasty.recipesapp.databinding.FragmentPrivateRecipeDetailFragmantBinding
 import com.tasty.recipesapp.databinding.FragmentProfileBinding
@@ -31,6 +33,9 @@ class PrivateRecipeDetailFragment : Fragment() {
     private var param2: String? = null
     private var data: NewRecipeModel? = null
     private var id: Long? = null
+    private val ingredientsListAdapter = SimpleListAdapter()
+    private val instructionListAdapter = SimpleListAdapter()
+
 
     private lateinit var binder: FragmentPrivateRecipeDetailFragmantBinding
     private val privateRecipeViewModel : PrivateRecipeViewModel by viewModels()
@@ -41,6 +46,10 @@ class PrivateRecipeDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binder.instructionsRecyclerView.layoutManager = LinearLayoutManager(context)
+        binder.ingredientsRecyclerView.layoutManager = LinearLayoutManager(context)
+        binder.instructionsRecyclerView.adapter = instructionListAdapter
+        binder.ingredientsRecyclerView.adapter = ingredientsListAdapter
         privateRecipeViewModel.getById(id!!)
         privateRecipeViewModel.recipe.observe(viewLifecycleOwner) {  recipe ->
             data = recipe
@@ -55,7 +64,10 @@ class PrivateRecipeDetailFragment : Fragment() {
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .fallback(R.drawable.ic_launcher_foreground)
                 .into(imageView)
+            recipe.instructions?.let { instructionListAdapter.setData(it) }
+            recipe.ingredients?.let { ingredientsListAdapter.setData(it) }
         }
+
     }
 
     override fun onCreateView(

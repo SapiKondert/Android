@@ -45,8 +45,12 @@ class RecipesFragment : Fragment() {
 
     fun viewClicked(data:RecipeModel){
         val navHostFragment = NavHostFragment.findNavController(this)
-        Log.i("RecipesFragment2", data.name)
-        val bundle = bundleOf("Title" to data.name, "Picture" to data.thumbnailURL, "Description" to data.description)
+        val bundle = bundleOf(
+            "Title" to data.name,
+            "Picture" to data.thumbnailURL,
+            "Description" to data.description,
+            "Ingredients" to data.sections.map { it.components.map { it.rawText } }[0],
+            "Instructions" to data.instructions.map { it.displayText })
         navHostFragment.navigate(R.id.action_recipesFragment_to_recipeDetailFragment,bundle)
     }
 

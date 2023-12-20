@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.tasty.recipesapp.R
+import com.tasty.recipesapp.adapter.SimpleListAdapter
 import com.tasty.recipesapp.data.models.NewRecipeModel
 import com.tasty.recipesapp.databinding.FragmentPrivateRecipeDetailFragmantBinding
 import com.tasty.recipesapp.databinding.FragmentRecipeDetailBinding
@@ -28,16 +30,26 @@ class RecipeDetailFragment : Fragment() {
     private var title: String? = null
     private var picture: String? = null
     private var description: String? = null
+    private var ingredients: List<String>? = null
+    private var instructions: List<String>? = null
+    private val ingredientsListAdapter = SimpleListAdapter()
+    private val instructionListAdapter = SimpleListAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         title = arguments?.getString("Title")
         picture = arguments?.getString("Picture")
         description = arguments?.getString("Description")
+        ingredients = arguments?.getStringArrayList("Ingredients")?.toList()
+        instructions = arguments?.getStringArrayList("Instructions")?.toList()
         Log.i("Picture", "$picture")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binder.instructionsRecyclerView.layoutManager = LinearLayoutManager(context)
+        binder.ingredientsRecyclerView.layoutManager = LinearLayoutManager(context)
+        binder.instructionsRecyclerView.adapter = instructionListAdapter
+        binder.ingredientsRecyclerView.adapter = ingredientsListAdapter
         binder.recipeTitle.text = title.toString()
         val imageView  = binder.imageView
         val imageURL = picture
@@ -49,6 +61,10 @@ class RecipeDetailFragment : Fragment() {
             .fallback(R.drawable.ic_launcher_foreground)
             .into(imageView)
         binder.description.text = description
+        Log.i("Instructions", "$instructions")
+        Log.i("Ingredients", "$ingredients")
+        instructionListAdapter.setData(instructions?: emptyList())
+        ingredientsListAdapter.setData(ingredients?: emptyList())
     }
 
     override fun onCreateView(

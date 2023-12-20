@@ -6,12 +6,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.profile.NewRecipeFragment">
+
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".ui.profile.PrivateRecipeDetailFragment">
 
-        <!-- TODO: Update blank fragment layout -->
+        <!-- Title -->
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -22,42 +23,83 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="75dp"
                 android:textSize="34sp"
-                android:textStyle="bold" android:textAlignment="center"/>
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+        <!-- Image -->
         <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp" tools:src="@tools:sample/backgrounds/scenic"
+                android:layout_height="200dp"
+                tools:src="@tools:sample/backgrounds/scenic"
                 android:id="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/recipe_title"
-                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                app:srcCompat="@drawable/ic_launcher_background" android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_launcher_background"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"/>
+
+        <!-- Description -->
         <TextView
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/imageView"
                 android:id="@+id/description"
-                app:layout_constraintStart_toStartOf="parent" android:textAlignment="viewStart"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp" android:textSize="20sp"/>
-        <!--<TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ingredientsTitle"
-                app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="20dp" android:textSize="24sp"
-                android:textStyle="bold" android:textAlignment="textStart"/>-->
-        <!--<ListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/ingredientsListView"
-                app:layout_constraintTop_toBottomOf="@+id/ingredientsTitle"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textAlignment="viewStart"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:headerDividersEnabled="false"/>-->
+                android:textSize="20sp"/>
+
+        <!-- Ingredients Title -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingredients"
+                android:id="@+id/ingredientsTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/description"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+        <!-- Ingredients RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ingredientsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/ingredientsTitleTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+        <!-- Instructions Title -->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructions"
+                android:id="@+id/instructionsTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/ingredientsRecyclerView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+        <!-- Instructions RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/instructionsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/instructionsTitleTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
